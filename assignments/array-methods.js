@@ -13,7 +13,7 @@ let fullName = [];
 runners.forEach(runner =>
   fullName.push(`${runner.first_name} ${runner.last_name}`)
 );
-//console.log(fullName);
+console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
@@ -25,12 +25,12 @@ let allCaps = runners.map(runner => {
   newRunnerRef.first_name = newRunnerRef.first_name.toUpperCase();
   return newRunnerRef;
 });
-//console.log(allCaps);
+console.log(allCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = runners.filter(runner => runner.shirt_size === "L");
-//console.log(largeShirts);
+console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
@@ -38,7 +38,7 @@ let ticketPriceTotal = runners.reduce(
   (sum, runner) => sum + runner.donation,
   0
 );
-//console.log(`$${ticketPriceTotal}`); //$7043
+console.log(`$${ticketPriceTotal}`); //$7043
 
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want
@@ -54,7 +54,7 @@ let ticketPriceTotal = runners.reduce(
 const govEmails = runners
   .filter(runner => runner.email.indexOf(".gov") > -1)
   .map(runner => `${runner.last_name}, ${runner.first_name}`);
-//console.log(govEmails);
+console.log(govEmails);
 
 // Problem 2 - Top 3 donation generators get a prize.  Get their email so we can
 // contact them!  Allow for more than 3 if there is a tie.
@@ -114,7 +114,7 @@ function bubbleSortArrayOfObjectsByNumberValue(arr, valueToSort) {
     // If nothing was changed, the loop ends
     if (!arrChanged) {
       cycle = false;
-      //console.log("Cycles: ", count);
+      console.log("Cycles: ", count);
     }
     // To avoid an infinite loop or extremely
     // long runtimes, this failsafe exits the loop
