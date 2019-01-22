@@ -32,6 +32,9 @@ contains("Pen", items, callback); // false
 
 */
 
+// With the callback I wrote, none of these need to be returned.  But it's just
+// a sample callback to test my code.  So I left them in in case they're used
+// with a callback that returns a value
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
@@ -59,9 +62,20 @@ function contains(item, list, cb) {
 }
 
 /* STRETCH PROBLEM */
+// Creating a duplicate item so I can test if it was removed later
+items.push("Gum");
 
-function removeDuplicates(array, cb) {
+removeDuplicates(items, callback); // [ 'Pencil', 'Notebook', 'yo-yo', 'Gum' ]
+
+function removeDuplicates(arr, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  let noDupes = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (noDupes.indexOf(arr[i]) === -1) {
+      noDupes.push(arr[i]);
+    }
+  }
+  return cb(noDupes);
 }
